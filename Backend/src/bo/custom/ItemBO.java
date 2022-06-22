@@ -13,3 +13,6 @@ public interface ItemBO extends SuperBO {
     ArrayList<ItemDTO> getAllItems(Connection con);
     String getItemCode(Connection con);
 }
+
+
+
