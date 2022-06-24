@@ -12,6 +12,8 @@ public interface ItemBO extends SuperBO {
     boolean deleteItem(Connection con, String code);
     ArrayList<ItemDTO> getAllItems(Connection con);
     String getItemCode(Connection con);
+    ItemDTO getItem(Connection con, String code);
+
 }
 
 

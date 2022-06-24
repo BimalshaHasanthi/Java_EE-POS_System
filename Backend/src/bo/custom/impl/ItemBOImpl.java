@@ -69,6 +69,16 @@ public class ItemBOImpl implements ItemBO {
         return "";
     }
 
+    @Override
+    public ItemDTO getItem(Connection con, String code) {
+        try {
+            Item item = itemDAO.get(con, code);
+            return new ItemDTO(item.getItemCode(),item.getName(),item.getUnitPrice(),item.getQtyOnHand());
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;    }
+
 
 }
 
