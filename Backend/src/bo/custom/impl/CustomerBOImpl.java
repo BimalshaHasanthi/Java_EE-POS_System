@@ -69,6 +69,16 @@ public class CustomerBOImpl implements CustomerBO {
         return "";
     }
 
+    @Override
+    public CustomerDTO getCustomer(Connection con, String id) {
+        try {
+            Customer customer = customerDAO.get(con, id);
+            return new CustomerDTO(customer.getCustomerId(),customer.getName(),customer.getAddress(),customer.getSalary());
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;    }
+
 }
 
 

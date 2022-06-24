@@ -12,6 +12,7 @@ public interface CustomerBO extends SuperBO {
     boolean deleteCustomer(Connection con, String id);
     ArrayList<CustomerDTO> getAllCustomers(Connection con);
     String getCustomerId(Connection con);
+    CustomerDTO getCustomer(Connection con, String id);
 }
 
 
