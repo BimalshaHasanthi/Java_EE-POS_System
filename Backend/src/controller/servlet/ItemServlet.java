@@ -14,8 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.RoundingMode;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 @WebServlet(urlPatterns = "/item")
@@ -33,9 +35,14 @@ public class ItemServlet extends HttpServlet {
         try {
             Connection connection = dataSource.getConnection();
 
-            JsonReader reader = Json.createReader(req.getReader());
-            JsonObject jsonReq = reader.readObject();
-            String option = jsonReq.getString("option");
+//            JsonReader reader = Json.createReader(req.getReader());
+//            JsonObject jsonReq = reader.readObject();
+
+            DecimalFormat df = new DecimalFormat("0.00");
+            df.setRoundingMode(RoundingMode.DOWN);
+
+
+            String option = req.getParameter("option");
 
             switch (option){
 
@@ -64,8 +71,8 @@ public class ItemServlet extends HttpServlet {
                     break;
 
                 case "SEARCH":
-                    JsonObject reqData = jsonReq.getJsonObject("data");
-                    String itemCode = reqData.getString("itemCode");
+//                    JsonObject reqData = req.getJsonObject("data");
+                    String itemCode = req.getParameter("itemCode");
                     ItemDTO itemDTO = itemBO.getItem(connection,itemCode);
 
                     if (itemDTO!=null) {

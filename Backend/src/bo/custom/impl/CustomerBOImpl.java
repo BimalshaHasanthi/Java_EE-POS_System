@@ -77,7 +77,8 @@ public class CustomerBOImpl implements CustomerBO {
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
-        return null;    }
+        return null;
+    }
 
 }
 
