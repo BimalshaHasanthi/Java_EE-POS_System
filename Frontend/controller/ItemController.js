@@ -284,7 +284,7 @@ $("#txtItemQty").keyup(function (event) {
     }
 });
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////
 function validateItemCode(){
     if (itemCodeRegEx.test($("#txtItemCode").val())) {
         $("#txtItemCode").css('border','3px solid green');
@@ -314,7 +314,7 @@ function validateItemQty(){
     }
 }
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 function loadItemIds() {
