@@ -1,3 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/">
+    <Resource
+            name="jdbc/pool"
+            type="javax.sql.DataSource"
+            driverClassName="com.mysql.cj.jdbc.Driver"
+            url="jdbc:mysql://localhost:3306/Company"
+            username="root"
+            password="1234"
+            maxTotal="15"
+            initialSize="15">
+    </Resource>
 </Context>
