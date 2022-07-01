@@ -469,6 +469,42 @@ btnCusSearch.click(function () {
 });
 
 
+
+btnCusSave.click(function () {
+
+    let jsonReq = {option : "",data : {id: txtCusID.val(),name: txtCusName.val(),address: txtCusAddress.val(),salary: txtCusSalary.val()}}
+
+    $.ajax({
+        url:"http://localhost:8080/Backend/customer",
+        method:"POST",
+        contentType:"application/json",
+        //JSON.stringify() method converts a js object to a valid json string
+        data:JSON.stringify(jsonReq),
+        success:function (jsonResp) {
+            if(jsonResp.status===200){
+                alert(jsonResp.message);
+                loadAllCustomers();
+                setCustomerCombo();
+            }else if(jsonResp.status===404){
+                alert(jsonResp.message);
+            }else{
+                alert(jsonResp.data);
+            }
+        },
+        error:function (ob, textStatus, error) {
+            console.log(ob);
+            console.log(textStatus);
+            console.log(error);
+        }
+    });
+
+    loadFromCustomerTable();
+
+});
+
+
+
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function loadFromCustomerTable() {
