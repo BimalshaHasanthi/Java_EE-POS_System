@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS Customer(
     customerId  VARCHAR(8) NOT NULL,
     name VARCHAR(20),
     address VARCHAR(45),
-    contact VARCHAR(15),
+    salary VARCHAR(15),
     PRIMARY KEY(customerId)
 );
 SELECT * FROM Customer;
