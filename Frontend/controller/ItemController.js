@@ -419,6 +419,44 @@ $(document).ready(function() {
 /////////////////////////////////////////////////////////////////////////////
 
 
+btnItemSearch.click(function () {
+    clearAllItemFields();
+
+    $.ajax({
+        url:"http://localhost:8080/Backend/item?option=SEARCH&code="+txtItemSearch.val(),
+        method:"GET",
+        contentType:"application/json",
+        success:function (jsonResp) {
+            if(jsonResp.status===200){
+                loadItemToFields(jsonResp.data);
+            }else if(jsonResp.status===404){
+                alert(jsonResp.message);
+            }else{
+                alert(jsonResp.data);
+            }
+        },
+        error:function (ob, textStatus, error) {
+            console.log(ob);
+            console.log(textStatus);
+            console.log(error);
+        }
+    });
+
+    function loadItemToFields(data) {
+        txtItemCode.val(data.code);
+        txtItemName.val(data.name);
+        txtItemPrice.val(data.unit_price);
+        txtItemQty.val(data.quantity);
+
+        validateItemCode();
+        validateItemName();
+        validateItemPrice();
+        validateItemQty();
+    }
+
+    loadFromItemTable();
+
+});
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 function loadFromItemTable() {
