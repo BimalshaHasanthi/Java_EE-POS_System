@@ -490,6 +490,37 @@ btnItemSave.click(function () {
 });
 
 
+btnItemUpdate.click(function () {
+
+    let jsonReq = {option : "", data : {code : txtItemCode.val(), name : txtItemName.val(), unit_price : txtItemPrice.val(), quantity : txtItemQty.val()}}
+
+    $.ajax({
+        url:"http://localhost:8080/Backend/item",
+        method:"PUT",
+        contentType:"application/json",
+        data:JSON.stringify(jsonReq),
+        success:function (jsonResp) {
+            if(jsonResp.status===200){
+                alert(jsonResp.message);
+                loadAllItems();
+                setItemCombo();
+            }else if(jsonResp.status===404){
+                alert(jsonResp.message);
+            }else{
+                alert(jsonResp.data);
+            }
+        },
+        error:function (ob, textStatus, error) {
+            console.log(ob);
+            console.log(textStatus);
+            console.log(error);
+        }
+    });
+
+    loadFromItemTable();
+
+});
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 function loadFromItemTable() {
