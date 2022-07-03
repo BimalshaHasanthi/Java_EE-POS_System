@@ -458,14 +458,47 @@ btnItemSearch.click(function () {
 
 });
 
+btnItemSave.click(function () {
+
+    let jsonReq = {option : "", data : {code : txtItemCode.val(), name : txtItemName.val(), unit_price : txtItemPrice.val(), quantity : txtItemQty.val()}}
+
+    $.ajax({
+        url:"http://localhost:8080/Backend/item",
+        method:"POST",
+        contentType:"application/json",
+        data:JSON.stringify(jsonReq),
+        success:function (jsonResp) {
+            if(jsonResp.status===200){
+                alert(jsonResp.message);
+                loadAllItems();
+                setItemCombo();
+            }else if(jsonResp.status===404){
+                alert(jsonResp.message);
+            }else{
+                alert(jsonResp.data);
+            }
+        },
+        error:function (ob, textStatus, error) {
+            console.log(ob);
+            console.log(textStatus);
+            console.log(error);
+        }
+    });
+
+    loadFromItemTable();
+
+});
+
+
+
 //////////////////////////////////////////////////////////////////////////////////////////////////
 function loadFromItemTable() {
 
     $("#item-table>tr:not(.spacer)").click(function () {
-        let code = $(this).children(":eq(1)").text();
-        let name = $(this).children(":eq(2)").text();
-        let unit_price = $(this).children(":eq(3)").text();
-        let quantity = $(this).children(":eq(4)").text();
+        let code = $(this).children(":eq(0)").text();
+        let name = $(this).children(":eq(1)").text();
+        let unit_price = $(this).children(":eq(2)").text();
+        let quantity = $(this).children(":eq(3)").text();
 
         console.log(code, name, unit_price, quantity);
 
