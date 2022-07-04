@@ -371,12 +371,12 @@ const itemNameRegEx = /^[A-z ]{2,20}$/;
 const itemPriceRegEx = /^[1-9][0-9]{0,5}[.][0-9]{2}$/;
 const itemQtyRegEx = /^[1-9][0-9]*$/;
 
-let btnItemSearch = $("#btnItemSearch");
-let btnItemSave = $("#btnItemSave");
-let btnItemUpdate = $("#btnItemUpdate");
-let btnItemDelete = $("#btnItemDelete");
+let btnItemSearch = $("#btnSearchItem");
+let btnItemSave = $("#btnAddItem");
+let btnItemUpdate = $("#btnUpdateItem");
+let btnItemDelete = $("#btnDeleteItem");
 
-let txtItemSearch = $("#txtItemSearch");
+let txtItemSearch = $("#txtSearchItemId");
 let txtItemCode = $("#txtItemCode");
 let txtItemName = $("#txtItemName");
 let txtItemPrice = $("#txtItemPrice");
