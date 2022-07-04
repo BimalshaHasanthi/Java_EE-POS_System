@@ -372,12 +372,6 @@ function isCustomerExists(id){
 
 
 
-
-
-
-
-
-
 const cusIDRegEx = /^(C-)[0-9]{5}$/;
 const cusNameRegEx = /^[A-z ]{2,20}$/;
 const cusAddressRegEx = /^[0-9/A-z. ,]{5,}$/;
@@ -567,10 +561,6 @@ btnCusDelete.click(function () {
 
 });
 
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function loadFromCustomerTable() {
 

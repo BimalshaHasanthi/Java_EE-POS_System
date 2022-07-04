@@ -416,7 +416,6 @@ $(document).ready(function() {
 });
 
 
-/////////////////////////////////////////////////////////////////////////////
 
 
 btnItemSearch.click(function () {
@@ -555,7 +554,7 @@ btnItemDelete.click(function () {
 });
 
 
-//////////////////////////////////////////////////////////////////////////////////////////////////
+
 function loadFromItemTable() {
 
     $("#item-table>tr:not(.spacer)").click(function () {
