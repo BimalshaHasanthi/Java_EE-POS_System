@@ -317,8 +317,6 @@ txtOrderItemQty.prop('disabled', true);
 txtSubTotal.prop('disabled', true);
 
 
-
-
 $(document).ready(function() {
     playDT();
     setOrderId();
