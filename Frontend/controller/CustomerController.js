@@ -408,7 +408,7 @@ txtCusName.keyup(function (event) {
 txtCusAddress.keyup(function (event) {
     validateCustAddress();
     if (event.key === 'Enter' && cusAddressRegEx.test(txtCusAddress.val())){
-        txtCusContact.focus();
+        txtCusSalary.focus();
     }
 });
 txtCusSalary.keyup(function (event) {
