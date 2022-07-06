@@ -376,11 +376,11 @@ let btnItemSave = $("#btnAddItem");
 let btnItemUpdate = $("#btnUpdateItem");
 let btnItemDelete = $("#btnDeleteItem");
 
-let txtItemSearch = $("#txtSearchItemId");
-let txtItemCode = $("#txtItemCode");
-let txtItemName = $("#txtItemName");
-let txtItemPrice = $("#txtItemPrice");
-let txtItemQty = $("#txtItemQty");
+let txtItemSearch = $("#txtSearchItId");
+let txtItemCode = $("#txtItCode");
+let txtItemName = $("#txtItName");
+let txtItemPrice = $("#txtItPrice");
+let txtItemQty = $("#txtItQty");
 
 let cmbOrderItemCode = $("#cmbOrderItemCode");
 let tblItem = $("#item-table");
