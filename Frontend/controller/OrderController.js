@@ -295,9 +295,9 @@ let btnPurchaseOrder = $("#btnPurchaseOrder");
 
 let txtOrderId = $("#txtOrderId");
 let txtTotal = $("#txtTotal");
-let txtOrderCusName = $("#txtCustomerName");
-let txtOrderCusAddress = $("#txtCustomerAddress");
-let txtOrderCusContact = $("#txtCustomerSalary");
+let txtOrderCusName = $("#txtOrderCustName");
+let txtOrderCusAddress = $("#txtOrderCustAddress");
+let txtOrderCusContact = $("#txtOrderCustContact");
 let txtOrderItemName = $("#txtItemName");
 let txtOrderItemPrice = $("#txtItemPrice");
 let txtOrderItemQty = $("#txtItemQty");
