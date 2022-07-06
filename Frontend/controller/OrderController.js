@@ -579,8 +579,8 @@ function isOrderItemExists(code) {
 }
 
 function playDT(){
-    let Clock_Date = $("#Clock_Date");
-    let Clock_Time = $("#Clock_Time");
+    let Clock_Date = $("#txtDate");
+    let Clock_Time = $("#txtTime");
 
     /*let dt = new Date().toISOString();
     Clock_Date.text(dt.split('T')[0]);

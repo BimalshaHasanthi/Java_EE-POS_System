@@ -382,14 +382,19 @@ let btnCusSave = $("#btnAddCustomer");
 let btnCusUpdate = $("#btnUpdateCustomer");
 let btnCusDelete = $("#btnDeleteCustomer");
 
-let txtCusSearch = $("#txtSearchCustomerId");
-let txtCusID = $("#txtCustomerId");
-let txtCusName = $("#txtCustomerName");
-let txtCusAddress = $("#txtCustomerAddress");
-let txtCusSalary = $("#txtCustomerSalary");
+let txtCusSearch = $("#txtSearchCustId");
+let txtCusID = $("#txtCustId");
+let txtCusName = $("#txtCustName");
+let txtCusAddress = $("#txtCustAddress");
+let txtCusSalary = $("#txtCustSalary");
 
 let cmbOrderCusId = $("#cmbOrderCustId");
 let tblCustomer = $("#customerTbl");
+
+
+/*txtCusName.prop('disabled', false);
+txtCusAddress.prop('disabled', false);
+txtCusSalary.prop('disabled', false);*/
 
 
 
@@ -419,8 +424,9 @@ txtCusSalary.keyup(function (event) {
 
 $(document).ready(function() {
     loadAllCustomers();
-    loadFromCustomerTable();
     setCustomerCombo();
+    loadFromCustomerTable();
+
 });
 
 btnCusSearch.click(function () {
@@ -565,10 +571,10 @@ btnCusDelete.click(function () {
 function loadFromCustomerTable() {
 
     $("#customerTbl>tr").click(function () {
-        let id = $(this).children(":eq(0)").text();
-        let name = $(this).children(":eq(1)").text();
-        let address = $(this).children(":eq(2)").text();
-        let salary = $(this).children(":eq(3)").text();
+        let id = $(this).children(":eq(1)").text();
+        let name = $(this).children(":eq(2)").text();
+        let address = $(this).children(":eq(3)").text();
+        let salary = $(this).children(":eq(4)").text();
 
         console.log(id, name, address, salary);
 
