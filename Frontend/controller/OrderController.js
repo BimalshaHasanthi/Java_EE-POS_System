@@ -298,9 +298,9 @@ let txtTotal = $("#txtTotal");
 let txtOrderCusName = $("#txtOrderCustName");
 let txtOrderCusAddress = $("#txtOrderCustAddress");
 let txtOrderCusContact = $("#txtOrderCustContact");
-let txtOrderItemName = $("#txtItemName");
-let txtOrderItemPrice = $("#txtItemPrice");
-let txtOrderItemQty = $("#txtItemQty");
+let txtOrderItemName = $("#txtOrderItemName");
+let txtOrderItemPrice = $("#txtOrderItemPrice");
+let txtOrderItemQty = $("#txtOrderItemQty");
 let txtQuantity = $("#txtQuantity");
 let txtSubTotal = $("#txtSubTotal");
 
@@ -308,13 +308,13 @@ let tblOrder = $("#orderTable");
 
 let cart = [];
 
-txtOrderCusName.prop('disabled', true);
-txtOrderCusAddress.prop('disabled', true);
-txtOrderCusContact.prop('disabled', true);
-txtOrderItemName.prop('disabled', true);
-txtOrderItemPrice.prop('disabled', true);
-txtOrderItemQty.prop('disabled', true);
-txtSubTotal.prop('disabled', true);
+// txtOrderCusName.prop('disabled', true);
+// txtOrderCusAddress.prop('disabled', true);
+// txtOrderCusContact.prop('disabled', true);
+// txtOrderItemName.prop('disabled', true);
+// txtOrderItemPrice.prop('disabled', true);
+// txtOrderItemQty.prop('disabled', true);
+// txtSubTotal.prop('disabled', true);
 
 
 $(document).ready(function() {

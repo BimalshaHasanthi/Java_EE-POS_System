@@ -383,7 +383,7 @@ let txtItemPrice = $("#txtItPrice");
 let txtItemQty = $("#txtItQty");
 
 let cmbOrderItemCode = $("#cmbOrderItemCode");
-let tblItem = $("#item-table");
+let tblItem = $("#itemTbl");
 
 
 
