@@ -297,7 +297,7 @@ let txtOrderId = $("#txtOrderId");
 let txtTotal = $("#txtTotal");
 let txtOrderCusName = $("#txtOrderCustName");
 let txtOrderCusAddress = $("#txtOrderCustAddress");
-let txtOrderCusContact = $("#txtOrderCustContact");
+let txtOrderCustSalary = $("#txtOrderCustSalary");
 let txtOrderItemName = $("#txtOrderItemName");
 let txtOrderItemPrice = $("#txtOrderItemPrice");
 let txtOrderItemQty = $("#txtOrderItemQty");
@@ -326,7 +326,7 @@ cmbOrderCusId.on('change', function() {
     if($(this).val()===""){
         txtOrderCusName.val("");
         txtOrderCusAddress.val("");
-        txtOrderCusContact.val("");
+        txtOrderCustSalary.val("");
     }else{
         $.ajax({
             url:"http://localhost:8080/Backend/place-order?option=GET-CUSTOMER&id="+$(this).val(),
@@ -336,7 +336,7 @@ cmbOrderCusId.on('change', function() {
                 if(jsonResp.status===200){
                     txtOrderCusName.val(jsonResp.data.name);
                     txtOrderCusAddress.val(jsonResp.data.address);
-                    txtOrderCusContact.val(jsonResp.data.salary);
+                    txtOrderCustSalary.val(jsonResp.data.salary);
                 }else if(jsonResp.status===404){
                     alert(jsonResp.message);
                 }else{
@@ -508,7 +508,7 @@ btnPurchaseOrder.click(function () {
 function clearAllOrderFields() {
     txtOrderCusName.val("");
     txtOrderCusAddress.val("");
-    txtOrderCusContact.val("");
+    txtOrderCustSalary.val("");
     txtOrderItemName.val("");
     txtOrderItemPrice.val("");
     txtOrderItemQty.val("");
